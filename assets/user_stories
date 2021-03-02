@@ -1,0 +1,11 @@
+As a logged-out user:
+    I want to be able to sign in
+    I want to be able to see the welcome page that shows the categories of fitness equipment available on this site
+As a logged in user:
+    I want to be able to see the categories of fitness equipment available on this site
+    I want to be able to see each of the items within a particular category on the site
+    I want to read about specific features of each item I am interested in
+    I want to be able to add and review items on my "Wish-List"
+    I want to be able to add items to my cart and review them
+    I want to be able to buy/reserve items from the site
+    I want privacy so that any information I put into the site is only visible to me
