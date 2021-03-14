@@ -113,29 +113,67 @@ firebase.auth().onAuthStateChanged(async function (user) {
   
       let outputElement = document.querySelector('.products')
   
-      console.log(products)
+      // console.log(products)
   
       for (let i = 0; i < products.length; i++) {
         let productName = products[i].name
-        let productId = products[i].id
-        let proudctCategory = products[i].category
+        // let productId = products[i].id
+        // let proudctCategory = products[i].category
         let productImage = products[i].image
         let productPrice = products[i].price
         let productDescription = products[i].description
   
-        console.log(outputElement)
         outputElement.insertAdjacentHTML(`beforeend`, `
     <div class="mt-6 md:flex md:space-x-6 p-6">
         <div class="md:w-1/3 md:flex">
           <div class="space-y-4 md:mt-0 mt-6">    
             <h2 class="font-bold text-xl">${productName}</h2>
             <img class="rounded-2xl" src="${productImage}">
-            <div> '${productDescription}' </div>
+            <div> ${productDescription} </div>
             <div class="font-bold"><em>$${productPrice}</em>
-            <div> <button class="${productName}-like-button">❤️</button> <div>
-            <button class="${productName}-add-to-cart-button block mt-4 text-white bg-blue-500 rounded px-4 py-2">Add to Cart</button> </div>
-            <button class="${productName}-add-to-wishlist-button block mt-4 text-white bg-green-500 rounded px-4 py-2">Add to Wish List</button>`)
-      }
+            <div class="like-button-${productName}"> <button>❤️</button> <div>
+            <div class="add-to-cart-button-${productName}"> <button class="block mt-4 text-white bg-blue-500 rounded px-4 py-2">Add to Cart</button> </div>
+            <div class="add-to-wishlist-button-${productName}"> <button class="block mt-4 text-white bg-green-500 rounded px-4 py-2">Add to Wish List</button> </div>`
+            )
+      
+      document.querySelector(`.add-to-wishlist-button-${productName}`).addEventListener('click', async function (event) {
+        event.preventDefault()
+        let wishlistElement = document.querySelector(`.${productName}-add-to-wishlist-button`)
+        wishlistElement.classList.add.innerHTML(`Added to Wishlist`)
+        await db.collection('Wished').doc(`${productName}-${user.uid}`).set({})
+      })
+
+      document.querySelector(`.add-to-cart-button-${productName}`).addEventListener('click', async function (event) {
+        event.preventDefault()
+        let cartElement = document.querySelector(`.${productName}-add-to-cart-button`)
+        wishlistElement.classList.add.innerHTML(`Added to Cart`)
+        await db.collection('Wished').doc(`${productName}-${user.uid}`).set({})
+      })
+
+      document.querySelector(`.like-button-${productName}`).addEventListener('click', async function(event) {
+        event.preventDefault()
+        console.log(`${productName} like button clicked!`)
+        let currentUserId = firebase.auth().currentUser.uid
+    
+        let querySnapshot = await db.collection('likes')
+          .where('productName', '==', productName)
+          .where('userId', '==', currentUserId)
+          .get()
+    
+        if (querySnapshot.size == 0) {
+          await db.collection('likes').add({
+            productName: productName,
+            userId: currentUserId
+          })
+          let existingNumberOfLikes = document.querySelector(`.post-${productName} .likes`).innerHTML
+          let newNumberOfLikes = parseInt(existingNumberOfLikes) + 1
+          document.querySelector(`.like-button-${productName}`).innerHTML = newNumberOfLikes
+        }
+    })
+  }
+
+
+
     // }
     // Sign-out button
     document.querySelector('.sign-in-or-sign-out').innerHTML = `
@@ -146,9 +184,9 @@ firebase.auth().onAuthStateChanged(async function (user) {
       firebase.auth().signOut()
       document.location.href = 'index.html'
     
-      
     })
     // window.addEventListener('DOMContentLoaded', authUIConfig)
+
   }
   else {
     let ui = new firebaseui.auth.AuthUI(firebase.auth())
@@ -167,10 +205,5 @@ firebase.auth().onAuthStateChanged(async function (user) {
   // )
   
 
-  // document.querySelector(`.${productName}-add-to-wishlist-button`).addEventListener('click', async function (event) {
-  //   event.preventDefault()
-  //   let wishlistElement = document.querySelector(`.${productName}-add-to-wishlist-button`)
-  //   // wishlistElement.classList.add('opacity-20')
-  //   await db.collection('Wished').doc(`${productName}-${user.uid}`).set({})
-  // })
+ 
 })
