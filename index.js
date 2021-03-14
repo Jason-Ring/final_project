@@ -16,7 +16,7 @@ firebase.auth().onAuthStateChanged(async function(user) {
     document.querySelector('.sign-out').addEventListener('click', function(event) {
       console.log('sign out clicked')
       firebase.auth().signOut()
-      document.location.href = 'kelloggram.html'
+      document.location.href = 'index222.html'
     })
 
     // Listen for the form submit and create/render the new post
