@@ -125,7 +125,6 @@ let products = [
       }
 ]
 
-
   let outputElement = document.querySelector('.products')
   
   console.log(products)
@@ -141,13 +140,13 @@ let products = [
   console.log(outputElement)
   outputElement.insertAdjacentHTML(`beforeend`, `
   <div class="mt-6 md:flex md:space-x-6 p-6">
-      <div class="md:w-1/3">
+      <div class="md:w-1/3 md:flex">
         <div class="space-y-4 md:mt-0 mt-6">    
           <h2 class="font-bold text-xl">${productName}</h2>
           <img class="rounded-2xl" src="${productImage}">
           <div> '${productDescription}' </div>
           <div class="font-bold"><em>${productPrice}</em>
-          <button class="like-button">❤️</button>
+          <div> <button class="like-button">❤️</button> <div>
           <button class="block mt-4 text-white bg-blue-500 rounded px-4 py-2">Add to Cart</button> </div>
           <button class="block mt-4 text-white bg-green-500 rounded px-4 py-2">Add to Wish List</button>`)
   }
