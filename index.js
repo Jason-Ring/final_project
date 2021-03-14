@@ -23,9 +23,7 @@ firebase.auth().onAuthStateChanged(async function(user) {
     // })
 })
 async function pageLoaded() {
-  // let products = require("./products.json")
-  // import products from ("./products.json")
-  
+
 let products = [
   {
       "name": "TKO Tri-Grip® Hex Urethane Dumbbells",
@@ -145,10 +143,10 @@ let products = [
           <h2 class="font-bold text-xl">${productName}</h2>
           <img class="rounded-2xl" src="${productImage}">
           <div> '${productDescription}' </div>
-          <div class="font-bold"><em>${productPrice}</em>
-          <div> <button class="like-button">❤️</button> <div>
-          <button class="block mt-4 text-white bg-blue-500 rounded px-4 py-2">Add to Cart</button> </div>
-          <button class="block mt-4 text-white bg-green-500 rounded px-4 py-2">Add to Wish List</button>`)
+          <div class="font-bold"><em>$${productPrice}</em>
+          <div> <button class="${productName}-like-button">❤️</button> <div>
+          <button class="${productName}-add-to-cart-button block mt-4 text-white bg-blue-500 rounded px-4 py-2">Add to Cart</button> </div>
+          <button class="${productName}-add-to-wishlist-button block mt-4 text-white bg-green-500 rounded px-4 py-2">Add to Wish List</button>`)
   }
 } 
 window.addEventListener('DOMContentLoaded', pageLoaded) 
