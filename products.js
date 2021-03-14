@@ -36,72 +36,65 @@ let products = [
         id: "P2",
         category: "Power Racks",
         image: `https://smhttp-ssl-18062.nexcesscdn.net/media/prod.thumb/t/k/tko-tri-grip-hex-dumbbells-urethane.jpg`,
-        price: 29.99,
-        description: `The TKO Tri-Grip® Hex Dumbbells provide high-quality with a stylish design to enhance the look of any facility. Built from the highest-end material and guaranteed to last in the highest used facilities like health clubs, college rec and high school levels.  They are designed with a proprietary handle to fit the natural arch of the hand, which increases safety and effectiveness.  They provide an exceptional grip for all users.`
+        price: 599.99,
+        description: `The American-made SML-2 is equally equipped for squats, bench, pull-ups, clean pulls, floor press, and more. And with a footprint of just 49" x 48", it's a squat stand well suited to both a garage gym or a large-scale training facility.`
     },
     {
-        name: "TKO Tri-Grip® Hex Urethane Dumbbells",
-        id: "1",
-        category: "Dumbells",
-        image: `https://smhttp-ssl-18062.nexcesscdn.net/media/prod.thumb/t/k/tko-tri-grip-hex-dumbbells-urethane.jpg`,
-        price: 29.99,
-        description: `The TKO Tri-Grip® Hex Dumbbells provide high-quality with a stylish design to enhance the look of any facility. Built from the highest-end material and guaranteed to last in the highest used facilities like health clubs, college rec and high school levels.  They are designed with a proprietary handle to fit the natural arch of the hand, which increases safety and effectiveness.  They provide an exceptional grip for all users.`
+        name: "Reliancer Power Tower Dip Station",
+        id: "P3",
+        category: "Power Racks",
+        image: `https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1608762979-7188yx3o2cl-ac-sl1500-edit-1608762971.jpg?crop=1xw:1xh;center,top&resize=768:*`,
+        price: 399.99,
+        description: `This steel frame rack can be adjusted to 11 different heights and has an 800 pound weight capacity. It comes with a detachable bench, push-up handles, a horizontal bar, barbell stands, and padded cushions for your forearms and back.`
     },
     {
-        name: "TKO Tri-Grip® Hex Urethane Dumbbells",
-        id: "1",
-        category: "Dumbells",
-        image: `https://smhttp-ssl-18062.nexcesscdn.net/media/prod.thumb/t/k/tko-tri-grip-hex-dumbbells-urethane.jpg`,
+        name: "GoFit Pro Stability Ball - Red (65cm)",
+        id: "EBall1",
+        category: "Exercise Balls",
+        image: `https://target.scene7.com/is/image/Target/GUEST_df26fbef-94cc-45a2-b797-f086b52b9f37?wid=325&hei=325&qlt=80&fmt=webp`,
         price: 29.99,
-        description: `The TKO Tri-Grip® Hex Dumbbells provide high-quality with a stylish design to enhance the look of any facility. Built from the highest-end material and guaranteed to last in the highest used facilities like health clubs, college rec and high school levels.  They are designed with a proprietary handle to fit the natural arch of the hand, which increases safety and effectiveness.  They provide an exceptional grip for all users.`
+        description: `The GoFit Pro Stability Balls are designed to stretch, tone and tighten your entire body. The exercise challenge from working out on an unstable surface engages your core stabilizer muscles that are not normally challenged when on a stable surface. Each kit includes the ball, foot pump, and printed workout sampler.`
     },
     {
-        name: "TKO Tri-Grip® Hex Urethane Dumbbells",
-        id: "1",
-        category: "Dumbells",
+        name: "Ignite by SPRI Stable Ball Kit",
+        id: "EBall2",
+        category: "Exercise Balls",
         image: `https://smhttp-ssl-18062.nexcesscdn.net/media/prod.thumb/t/k/tko-tri-grip-hex-dumbbells-urethane.jpg`,
-        price: 29.99,
-        description: `The TKO Tri-Grip® Hex Dumbbells provide high-quality with a stylish design to enhance the look of any facility. Built from the highest-end material and guaranteed to last in the highest used facilities like health clubs, college rec and high school levels.  They are designed with a proprietary handle to fit the natural arch of the hand, which increases safety and effectiveness.  They provide an exceptional grip for all users.`
+        price: 21.99,
+        description: `Increase strength, balance and flexibility with the Ignite by SPRI Stable Ball Kit. Stay-Put technology ensures the ball won't roll away and helps secure it during dynamic exercises, while the additional weight adds resistance that boosts results. The durable, anti-burst construction will withstand any workout you dish out and can hold up to 300 pounds.`
     },
     {
-        name: "TKO Tri-Grip® Hex Urethane Dumbbells",
-        id: "1",
-        category: "Dumbells",
-        image: `https://smhttp-ssl-18062.nexcesscdn.net/media/prod.thumb/t/k/tko-tri-grip-hex-dumbbells-urethane.jpg`,
-        price: 29.99,
-        description: `The TKO Tri-Grip® Hex Dumbbells provide high-quality with a stylish design to enhance the look of any facility. Built from the highest-end material and guaranteed to last in the highest used facilities like health clubs, college rec and high school levels.  They are designed with a proprietary handle to fit the natural arch of the hand, which increases safety and effectiveness.  They provide an exceptional grip for all users.`
+        name: "Stability Ball - All in Motion™",
+        id: "EBall3",
+        category: "Exercise Balls",
+        image: `https://target.scene7.com/is/image/Target/GUEST_84b40869-79b3-45be-bed1-d434aef17fa1?wid=325&hei=325&qlt=80&fmt=webp`,
+        price: 14.99,
+        description: `Enhance your workouts with a stability ball that helps you build back and core strength by adding balance and resistance to increase muscle activation.`
     },
     {
-        name: "TKO Tri-Grip® Hex Urethane Dumbbells",
-        id: "1",
-        category: "Dumbells",
-        image: `https://smhttp-ssl-18062.nexcesscdn.net/media/prod.thumb/t/k/tko-tri-grip-hex-dumbbells-urethane.jpg`,
-        price: 29.99,
-        description: `The TKO Tri-Grip® Hex Dumbbells provide high-quality with a stylish design to enhance the look of any facility. Built from the highest-end material and guaranteed to last in the highest used facilities like health clubs, college rec and high school levels.  They are designed with a proprietary handle to fit the natural arch of the hand, which increases safety and effectiveness.  They provide an exceptional grip for all users.`
+        name: "Bowflex C7 Indoor Cycling Bike",
+        id: "EBike1",
+        category: "Exercise Bikes",
+        image: `https://global.bowflex.com/on/demandware.static/-/Sites-nautilus-master-catalog/default/dwe0668bea/images/bowflex/bikes/100926/bowflex-c7-bike.png`,
+        price: 1499.99,
+        description: `The Bowflex C7 Indoor Cycling Bike provides incredible stability, comfort, and will simulate a true bike riding experience.`
     },
     {
         name: "TKO Tri-Grip® Hex Urethane Dumbbells",
         {
             name: "TKO Tri-Grip® Hex Urethane Dumbbells",
-            id: "1",
-            category: "Dumbells",
-            image: `https://smhttp-ssl-18062.nexcesscdn.net/media/prod.thumb/t/k/tko-tri-grip-hex-dumbbells-urethane.jpg`,
-            price: 29.99,
-            description: `The TKO Tri-Grip® Hex Dumbbells provide high-quality with a stylish design to enhance the look of any facility. Built from the highest-end material and guaranteed to last in the highest used facilities like health clubs, college rec and high school levels.  They are designed with a proprietary handle to fit the natural arch of the hand, which increases safety and effectiveness.  They provide an exceptional grip for all users.`
+            id: "EBike2",
+            category: "Exercise Bikes",
+            image: `https://www.allexercisebikes.net/images/proform-carbon-cx-exercise-bike.jpg`,
+            price: 1199.99,
+            description: `The ProForm Carbon C10 Smart Bike is sturdy, durable, and built for every day use.`
         },
         {
-            name: "TKO Tri-Grip® Hex Urethane Dumbbells",
-            id: "1",
-            category: "Dumbells",
-            image: `https://smhttp-ssl-18062.nexcesscdn.net/media/prod.thumb/t/k/tko-tri-grip-hex-dumbbells-urethane.jpg`,
-            price: 29.99,
-            description: `The TKO Tri-Grip® Hex Dumbbells provide high-quality with a stylish design to enhance the look of any facility. Built from the highest-end material and guaranteed to last in the highest used facilities like health clubs, college rec and high school levels.  They are designed with a proprietary handle to fit the natural arch of the hand, which increases safety and effectiveness.  They provide an exceptional grip for all users.`
+            name: "NordicTrack Grand Tour Bike",
+            id: "EBike3",
+            category: "Exercise Bikes",
+            image: `https://i1.wp.com/www.exercise-bike-review.com/wp-content/uploads/2018/10/Nordictrack-s22i-studio-cycle.jpg?resize=650%2C650`,
+            price: 999.99,
+            description: `NordicTrack Grand Tour Bike will provide the cushion you need to feel comfortable as you get in your daily workout.`
         },
-        id: "1",
-        category: "Dumbells",
-        image: `https://smhttp-ssl-18062.nexcesscdn.net/media/prod.thumb/t/k/tko-tri-grip-hex-dumbbells-urethane.jpg`,
-        price: 29.99,
-        description: `The TKO Tri-Grip® Hex Dumbbells provide high-quality with a stylish design to enhance the look of any facility. Built from the highest-end material and guaranteed to last in the highest used facilities like health clubs, college rec and high school levels.  They are designed with a proprietary handle to fit the natural arch of the hand, which increases safety and effectiveness.  They provide an exceptional grip for all users.`
-    },
-    
 ]
