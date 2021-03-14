@@ -98,3 +98,5 @@ let products = [
             description: `NordicTrack Grand Tour Bike will provide the cushion you need to feel comfortable as you get in your daily workout.`
         },
 ]
+
+export {products};
