@@ -151,5 +151,5 @@ let products = [
           <button class="block mt-4 text-white bg-blue-500 rounded px-4 py-2">Add to Cart</button> </div>
           <button class="block mt-4 text-white bg-green-500 rounded px-4 py-2">Add to Wish List</button>`)
   }
-}
-window.addEventListener('DOMContentLoaded', pageLoaded)
+} 
+window.addEventListener('DOMContentLoaded', pageLoaded) 
