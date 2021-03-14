@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gym Equipment Store</title>
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" type="text/css">
+  <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.7.3/firebase-ui-auth.css" />
+</head>
+
+<body>
+ 
+  <!-- Put the Firebase config here -->
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-app.js"></script>
+  <!-- Firebase Auth -->
+  <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/ui/4.7.3/firebase-ui-auth.js"></script>
+
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+    apiKey: "AIzaSyC2lQ0bHcGNs2vaioAGpO-j8OzDWrDox9I",
+    authDomain: "kiei451-c5332.firebaseapp.com",
+    projectId: "kiei451-c5332",
+    storageBucket: "kiei451-c5332.appspot.com",
+    messagingSenderId: "60157349058",
+    appId: "1:60157349058:web:13a7dd49bea7aa73adff5b",
+    measurementId: "G-76T99EBXYQ"
+    } // replace
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+  </script>
+  <script src="index.js"></script>
+  
+  <h1 class="text-center m-8 font-bold text-2xl">Welcome to the Gym Equipment Store</h1>   
+  <div class="px-12 md:flex items-center bg-green-100">
+      <div class="md:w-1/2 m-auto md:p-12">
+        <img class="rounded-2xl" src="https://nwscdn.com/media/wysiwyg/3kf/exercise/Fitness-Ball.jpg">
+      </div>
+      
+      <div class="md:w-1/2 p-6 space-y-3">
+        <div class="sign-in-or-sign-out"></div>
+          <div class="p-4">
+            <h4 class="font-bold text-xl">Top-Notch Equipment</h4>
+              <p> Tested by top sports scientists and used by top athletes.</p>
+          </div>
+          <div class="p-4">
+              <h4 class="font-bold text-xl">Best Prices</h4>
+              <p> Fair prices that are affordable to all.</p>
+          </div>
+          <div class="p-4">
+              <h4 class="font-bold text-xl">Easy to Use</h4>
+              <p> Simple website to choose what you want and set up your wishlist.</p>
+          </div>
+      </div>
+  </div>
+
+  <div class="filters md:flex justify-center space-x-2 md:space-y-0 space-y-2"></div>
+  <div class="text-center"><a href="#" id="wishlist-filter" class="filter-button inline-block border-2 border-green-500 text-green-500 rounded px-4 py-2">Wishlist</a></div>
+  <div class="text-center"><a href="#" id="cart-filter" class="filter-button inline-block border-2 border-green-500 text-green-500 rounded px-4 py-2">Cart</a></div>
+
+  <div class="m-12">
+    <h1 class="text-xl font-bold text-center text-green-800">Click <a class="underline text-blue-800" href="categories.html">here</a> to see our different types of equipment!</h1>
+    <div class="filters md:flex justify-center space-x-2 md:space-y-0 space-y-2">
+      <div class="text-center text-xl text-green-500 px-4 md:py-2">Types of Equipment:</div>
+      <div class="text-center"><a href="#Dumbells-filter-index" id="dumbells-filter" class="filter-button inline-block border-2 border-green-500 text-green-500 rounded px-4 py-2">Dumbells</a></div>
+      <div class="text-center"><a href="#Power-Racks-filter-index" id="power_racks-filter" class="filter-button inline-block border-2 border-green-500 text-green-500 rounded px-4 py-2">Power Racks</a></div>
+      <div class="text-center"><a href="#Exercise-Balls-filter-index" id="exercise_balls-filter" class="filter-button inline-block border-2 border-green-500 text-green-500 rounded px-4 py-2">Exercise Balls</a></div>
+      <div class="text-center"><a href="#Exercise-Bikes-filter-index" id="exercise_bikes-filter" class="filter-button inline-block border-2 border-green-500 text-green-500 rounded px-4 py-2">Exercise Bikes</a></div>
+    </div>
+
+    <div class="mt:p-16 p-4">
+        <div class="text-center">
+            <h1 class="font-bold text-center text-2xl"><a class="underline text-blue-800" href="index.html">Gym Equipment Store</a></h1>
+            <h1 class="font-bold text-center text-2xl"><a class="underline text-green-800" href="categories.html">Category</a></h1> 
+            <h1 class="font-bold text-center text-2xl" id="Dumbells-filter-index">Dumbells</h1> 
+        </div>
+    </div>
+    <div class="mt-6 md:flex md:space-x-6 p-6">
+        <div class="md:w-1/3">
+            <div class="space-y-4 md:mt-0 mt-6">    
+                <h2 class="font-bold text-xl">TKO Tri-Grip® Hex Urethane Dumbbells</h2>
+                <img class="rounded-2xl" src="https://smhttp-ssl-18062.nexcesscdn.net/media/prod.thumb/t/k/tko-tri-grip-hex-dumbbells-urethane.jpg">
+                <div> The TKO Tri-Grip® Hex Dumbbells provide high-quality with a stylish design to enhance the look of any facility. Built from the highest-end material and guaranteed to last in the highest used facilities like health clubs, college rec and high school levels.  They are designed with a proprietary handle to fit the natural arch of the hand, which increases safety and effectiveness.  They provide an exceptional grip for all users. </div>
+                <div class="font-bold"><em>$29.99</em>
+                <button class="text-1xl block mt-4 text-white bg-red-500 rounded px-4 py-2">♥ - Like!! </button>
+                <button class="block mt-4 text-white bg-blue-500 rounded px-4 py-2">Add to Cart</button> </div>
+                <button class="block mt-4 text-white bg-green-500 rounded px-4 py-2">Add to Wish List</button>
+                
+            </div>
+        </div>
+        <div class="md:w-1/3">
+            <div class="space-y-4 md:mt-0 mt-6">
+                <h2 class="font-bold text-xl">Hampton Dura-Prostyle Dumbbell</h2>
+                <img class="rounded-2xl" src="https://smhttp-ssl-18062.nexcesscdn.net/media/prod.thumb/h/a/hampton-dumbbell-dpu_10_19.jpg">
+                <div> The Hampton Dura-Prostyle Dumbbell combines everything you want in a Dumbbell into a single, beautifully-designed unit. It’s practical and efficient, offering you the choice of vertical or horizontal storage based on your gym’s configuration and space issues. It’s ergonomically-designed, with a unique 35-mm handle contoured to fit the natural arch of the hand for increased safety and effectiveness, with a coarse knurling for exceptional grip. </div>
+                <div class="font-bold"><em>$19.99</em>
+                    <button class="text-1xl block mt-4 text-white bg-red-500 rounded px-4 py-2">♥ - Like!! </button>
+                    <button class="block mt-4 text-white bg-blue-500 rounded px-4 py-2">Add to Cart</button> </div>
+                    <button class="block mt-4 text-white bg-green-500 rounded px-4 py-2">Add to Wish List</button>
+            </div>
+        </div>
+        <div class="md:w-1/3">
+            <div class="space-y-4 md:mt-0 mt-6">
+                <h2 class="font-bold text-xl">Adjustable Dumbbell Set</h2>
+                <img class="rounded-2xl" src="https://smhttp-ssl-18062.nexcesscdn.net/media/prod.thumb/c/o/core-adjustable-dumbbell-set-01.jpg">
+                <div> Core Home Fitness's Adjustable Dumbbells let you change weights in 5 lb increments with the simple twist of a handle – no knobs to turn or levers to slide. With weights ranging from 5 to 50 lbs, our dumbbell gives you an entire 10-piece set in a single dumbbell – all with a durable construction and a modern, lightweight aluminum cradle. It’s a great way to get a real workout with real results – all from a smart, compact design.</div>
+                <div class="font-bold"><em>$99.99</em>
+                <button class="text-1xl block mt-4 text-white bg-red-500 rounded px-4 py-2">♥ - Like!! </button>
+                <button class="block mt-4 text-white bg-blue-500 rounded px-4 py-2">Add to Cart</button> </div>
+                <button class="block mt-4 text-white bg-green-500 rounded px-4 py-2">Add to Wish List</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="mt:p-16 p-4">
+        <div class="text-center">
+            <h1 class="font-bold text-center text-2xl"><a class="underline text-blue-800" href="index.html">Gym Equipment Store</a></h1>
+            <h1 class="font-bold text-center text-2xl"><a class="underline text-green-800" href="categories.html">Category</a></h1> 
+            <h1 class="font-bold text-center text-2xl" id="Power-Racks-filter-index">Power Racks</h1> 
+        </div>
+    </div>
+    <div class="mt-6 md:flex md:space-x-6 p-6">
+        <div class="md:w-1/3">
+            <div class="space-y-4 md:mt-0 mt-6">    
+                <h2 class="font-bold text-xl">Profile® Squat Rack with Kipping Bar™</h2>
+                <img class="rounded-2xl" src="https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1599145859-profile-rack-jpg-1.jpg?crop=1xw:1.00xh;center,top&resize=768:*">
+                <div> Rogue is one of the top rack brands out there, and this 90” squat stand is a great way to score their characteristic quality and function (although you will have to buy a bench, barbell and weight plate set separately). At 49” W x 48” D x 98” H, this rack is pretty compact, so you can easily fit it in your garage. Choose between a fully-integrated fat/skinny pull-up bar or a single 1.25” pull-up bar. </div>
+                <div class="font-bold"><em>$799.99</em>
+                <button class="text-1xl block mt-4 text-white bg-red-500 rounded px-4 py-2">♥ - Like!! </button>
+                <button class="block mt-4 text-white bg-blue-500 rounded px-4 py-2">Add to Cart</button> </div>
+                <button class="block mt-4 text-white bg-green-500 rounded px-4 py-2">Add to Wish List</button>
+                
+            </div>
+        </div>
+        <div class="md:w-1/3">
+            <div class="space-y-4 md:mt-0 mt-6">
+                <h2 class="font-bold text-xl">SML-2 Rogue 90</h2>
+                <img class="rounded-2xl" src="https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1548179559-7993.jpg?crop=0.523xw:1xh;center,top&resize=768:*">
+                <div> The Hampton Dura-Prostyle Dumbbell combines everything you want in a Dumbbell into a single, beautifully-designed unit. It’s practical and efficient, offering you the choice of vertical or horizontal storage based on your gym’s configuration and space issues. It’s ergonomically-designed, with a unique 35-mm handle contoured to fit the natural arch of the hand for increased safety and effectiveness, with a coarse knurling for exceptional grip. </div>
+                <div class="font-bold"><em>$599.99</em>
+                    <button class="text-1xl block mt-4 text-white bg-red-500 rounded px-4 py-2">♥ - Like!! </button>
+                    <button class="block mt-4 text-white bg-blue-500 rounded px-4 py-2">Add to Cart</button> </div>
+                    <button class="block mt-4 text-white bg-green-500 rounded px-4 py-2">Add to Wish List</button>
+            </div>
+        </div>
+        <div class="md:w-1/3">
+            <div class="space-y-4 md:mt-0 mt-6">
+                <h2 class="font-bold text-xl">Reliancer Power Tower Dip Station</h2>
+                <img class="rounded-2xl" src="https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1608762979-7188yx3o2cl-ac-sl1500-edit-1608762971.jpg?crop=1xw:1xh;center,top&resize=768:*">
+                <div> This steel frame rack can be adjusted to 11 different heights and has an 800 pound weight capacity. It comes with a detachable bench, push-up handles, a horizontal bar, barbell stands, and padded cushions for your forearms and back.</div>
+                <div class="font-bold"><em>$399.99</em>
+                <button class="text-1xl block mt-4 text-white bg-red-500 rounded px-4 py-2">♥ - Like!! </button>
+                <button class="block mt-4 text-white bg-blue-500 rounded px-4 py-2">Add to Cart</button> </div>
+                <button class="block mt-4 text-white bg-green-500 rounded px-4 py-2">Add to Wish List</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="mt:p-16 p-4">
+        <div class="text-center">
+            <h1 class="font-bold text-center text-2xl"><a class="underline text-blue-800" href="index.html">Gym Equipment Store</a></h1>
+            <h1 class="font-bold text-center text-2xl"><a class="underline text-green-800" href="categories.html">Category</a></h1> 
+            <h1 class="font-bold text-center text-2xl" id="Exercise-Balls-filter-index">Exercise Balls</h1> 
+        </div>
+    </div>
+    <div class="mt-6 md:flex md:space-x-6 p-6">
+        <div class="md:w-1/3">
+            <div class="space-y-4 md:mt-0 mt-6">    
+                <h2 class="font-bold text-xl">GoFit Pro Stability Ball - Red (65cm)</h2>
+                <img class="rounded-2xl" src="https://target.scene7.com/is/image/Target/GUEST_df26fbef-94cc-45a2-b797-f086b52b9f37?wid=325&hei=325&qlt=80&fmt=webp">
+                <div> The GoFit Pro Stability Balls are designed to stretch, tone and tighten your entire body. The exercise challenge from working out on an unstable surface engages your core stabilizer muscles that are not normally challenged when on a stable surface. Each kit includes the ball, foot pump, and printed workout sampler.
+                    If the item details above aren’t accurate or complete, we want to know about it. Report incorrect product info.
+                     </div>
+                <div class="font-bold"><em>$29.99</em>
+                <button class="text-1xl block mt-4 text-white bg-red-500 rounded px-4 py-2">♥ - Like!! </button>
+                <button class="block mt-4 text-white bg-blue-500 rounded px-4 py-2">Add to Cart</button> </div>
+                <button class="block mt-4 text-white bg-green-500 rounded px-4 py-2">Add to Wish List</button>
+
+                
+            </div>
+        </div>
+        <div class="md:w-1/3">
+            <div class="space-y-4 md:mt-0 mt-6">
+                <h2 class="font-bold text-xl">Ignite by SPRI Stable Ball Kit</h2>
+                <img class="rounded-2xl" src="https://target.scene7.com/is/image/Target/GUEST_dfd6abb2-638b-4552-a87a-a02ad4fe744e?wid=325&hei=325&qlt=80&fmt=webp">
+                <div> ncrease strength, balance and flexibility with the Ignite by SPRI Stable Ball Kit. Stay-Put technology ensures the ball won't roll away and helps secure it during dynamic exercises, while the additional weight adds resistance that boosts results. The durable, anti-burst construction will withstand any workout you dish out and can hold up to 300 pounds.  </div>
+                <div class="font-bold"><em>$21.99</em>
+                    <button class="text-1xl block mt-4 text-white bg-red-500 rounded px-4 py-2">♥ - Like!! </button>
+                    <button class="block mt-4 text-white bg-blue-500 rounded px-4 py-2">Add to Cart</button> </div>
+                    <button class="block mt-4 text-white bg-green-500 rounded px-4 py-2">Add to Wish List</button>
+            </div>
+        </div>
+        <div class="md:w-1/3">
+            <div class="space-y-4 md:mt-0 mt-6">
+                <h2 class="font-bold text-xl">Stability Ball - All in Motion™</h2>
+                <img class="rounded-2xl" src="https://target.scene7.com/is/image/Target/GUEST_84b40869-79b3-45be-bed1-d434aef17fa1?wid=325&hei=325&qlt=80&fmt=webp">
+                <div> Enhance your workouts with a stability ball that helps you build back and core strength by adding balance and resistance to increase muscle activation.</div>
+                <div class="font-bold"><em>$14.99</em>
+                <button class="text-1xl block mt-4 text-white bg-red-500 rounded px-4 py-2">♥ - Like!! </button>
+                <button class="block mt-4 text-white bg-blue-500 rounded px-4 py-2">Add to Cart</button> </div>
+                <button class="block mt-4 text-white bg-green-500 rounded px-4 py-2">Add to Wish List</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="mt:p-16 p-4">
+        <div class="text-center">
+            <h1 class="font-bold text-center text-2xl"><a class="underline text-blue-800" href="index.html">Gym Equipment Store</a></h1>
+            <h1 class="font-bold text-center text-2xl"><a class="underline text-green-800" href="categories.html">Category</a></h1> 
+            <h1 class="font-bold text-center text-2xl" id="Exercise-Bikes-filter-index">Exercise Bikes</h1> 
+        </div>
+    </div>
+    <div class="mt-6 md:flex md:space-x-6 p-6">
+        <div class="md:w-1/3">
+            <div class="space-y-4 md:mt-0 mt-6">    
+                <h2 class="font-bold text-xl">Bowflex C7 Indoor Cycling Bike</h2>
+                <img class="rounded-2xl" src="https://global.bowflex.com/on/demandware.static/-/Sites-nautilus-master-catalog/default/dwe0668bea/images/bowflex/bikes/100926/bowflex-c7-bike.png">
+                <div> Bowflex C7 Indoor Cycling Bike is the best exercise bike out there. </div>
+                <div class="font-bold"><em>$1,499.99</em>
+                <button class="text-1xl block mt-4 text-white bg-red-500 rounded px-4 py-2">♥ - Like!! </button>
+                <button class="block mt-4 text-white bg-blue-500 rounded px-4 py-2">Add to Cart</button> </div>
+                <button class="block mt-4 text-white bg-green-500 rounded px-4 py-2">Add to Wish List</button>
+                
+            </div>
+        </div>
+        <div class="md:w-1/3">
+            <div class="space-y-4 md:mt-0 mt-6">
+                <h2 class="font-bold text-xl">ProForm Carbon C10 Smart Bike</h2>
+                <img class="rounded-2xl" src="https://www.allexercisebikes.net/images/proform-carbon-cx-exercise-bike.jpg">
+                <div> ProForm Carbon C10 Smart Bike is the second best exercise bike out there. </div>
+                <div class="font-bold"><em>$1,199.99</em>
+                    <button class="text-1xl block mt-4 text-white bg-red-500 rounded px-4 py-2">♥ - Like!! </button>
+                    <button class="block mt-4 text-white bg-blue-500 rounded px-4 py-2">Add to Cart</button> </div>
+                    <button class="block mt-4 text-white bg-green-500 rounded px-4 py-2">Add to Wish List</button>
+            </div>
+        </div>
+        <div class="md:w-1/3">
+            <div class="space-y-4 md:mt-0 mt-6">
+                <h2 class="font-bold text-xl">NordicTrack Grand Tour Bike</h2>
+                <img class="rounded-2xl" src="https://i1.wp.com/www.exercise-bike-review.com/wp-content/uploads/2018/10/Nordictrack-s22i-studio-cycle.jpg?resize=650%2C650">
+                <div> NordicTrack Grand Tour Bike is the third best bike out there. </div>
+                <div class="font-bold"><em>$999.99</em>
+                <button class="text-1xl block mt-4 text-white bg-red-500 rounded px-4 py-2">♥ - Like!! </button>
+                <button class="block mt-4 text-white bg-blue-500 rounded px-4 py-2">Add to Cart</button> </div>
+                <button class="block mt-4 text-white bg-green-500 rounded px-4 py-2">Add to Wish List</button>
+            </div>
+        </div>
+    </div>
+
+  </body>
+
+</html>
