@@ -132,7 +132,7 @@ firebase.auth().onAuthStateChanged(async function (user) {
         let productImage = products[i].image
         let productPrice = products[i].price
         let productDescription = products[i].description
-  
+        
         outputElement.insertAdjacentHTML(`beforeend`, `
     <div class="mt-6 md:flex md:space-x-2 p-2">
         <div class="md:w-1/3 md:flex">
@@ -145,13 +145,13 @@ firebase.auth().onAuthStateChanged(async function (user) {
             <div class="add-to-cart-button-${productName}"> <button class="block mt-4 text-white bg-blue-500 rounded px-4 py-2">Add to Cart</button> </div>
             <div class="add-to-wishlist-button-${productName}"> <button class="block mt-4 text-white bg-green-500 rounded px-4 py-2">Add to Wish List</button> </div>`
             )
-      
-    //   document.querySelector(`.add-to-wishlist-button-${productName}`).addEventListener('click', async function (event) {
-    //     event.preventDefault()
-    //     let wishlistElement = document.querySelector(`.${productName}-add-to-wishlist-button`)
-    //     wishlistElement.classList.add.innerHTML(`Added to Wishlist`)
-    //     await db.collection('Wished').doc(`${productName}-${user.uid}`).set({})
-    //   })
+            
+      document.querySelector(`.add-to-wishlist-button-${productName}`).addEventListener('click', async function (event) {
+        event.preventDefault()
+        let wishlistElement = document.querySelector(`.${productName}-add-to-wishlist-button`)
+        wishlistElement.classList.add.innerHTML(`Added to Wishlist`)
+        await db.collection('Wished').doc(`${productName}-${user.uid}`).set({})
+      })
 
     //   document.querySelector(`.add-to-cart-button-${productName}`).addEventListener('click', async function (event) {
     //     event.preventDefault()
