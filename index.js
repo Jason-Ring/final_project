@@ -141,15 +141,16 @@ firebase.auth().onAuthStateChanged(async function (user) {
             <img class="rounded-2xl" src="${productImage}">
             <div class= text-m> ${productDescription} </div>
             <div class="font-bold text-m"><em>$${productPrice}</em>
-            <div> <button class="block mt-4 text-white bg-blue-500 rounded px-4 py-2">Add to Cart</button> </div>
+            <div> <button class="add-to-cartlist-button-${productId} block mt-4 text-white bg-blue-500 rounded px-4 py-2">Add to Cart</button> </div>
             <div> <button class="add-to-wishlist-button-${productId} block mt-4 text-white bg-green-500 rounded px-4 py-2">Add to Wish List</button> </div>`
       )
 
-      let docRef = await db.collection('Wished').doc(`${productId}-${user.uid}`).get()
-      let wishedProduct = docRef.data()
+      let docRefWish = await db.collection('Wished').doc(`${productId}-${user.uid}`).get()
+      let wishedProduct = docRefWish.data()
       if (wishedProduct) {
         let wishlistElement = document.querySelector(`.add-to-wishlist-button-${productId}`)
         wishlistElement.innerHTML = `Added to Wishlist`
+        wishlistElement.classList.add('opacity-30')
       }
 
       document.querySelector(`.add-to-wishlist-button-${productId}`).addEventListener('click', async function (event) {
@@ -157,35 +158,25 @@ firebase.auth().onAuthStateChanged(async function (user) {
         let wishlistElement = document.querySelector(`.add-to-wishlist-button-${productId}`)
         wishlistElement.innerHTML = `Added to Wishlist`
         await db.collection('Wished').doc(`${productId}-${user.uid}`).set({})
+        wishlistElement.classList.add('opacity-30')
       })
 
-      //   document.querySelector(`.add-to-cart-button-${productName}`).addEventListener('click', async function (event) {
-      //     event.preventDefault()
-      //     let cartElement = document.querySelector(`.${productName}-add-to-cart-button`)
-      //     wishlistElement.classList.add.innerHTML(`Added to Cart`)
-      //     await db.collection('Wished').doc(`${productName}-${user.uid}`).set({})
-      //   })
+      let docRefCart = await db.collection('Carted').doc(`${productId}-${user.uid}`).get()
+      let cartedProduct = docRefCart.data()
+      if (cartedProduct) {
+        let cartlistElement = document.querySelector(`.add-to-cartlist-button-${productId}`)
+        cartlistElement.innerHTML = `Added to Cart`
+        cartlistElement.classList.add('opacity-30')
+      }
 
-      //   document.querySelector(`.like-button-${productName}`).addEventListener('click', async function(event) {
-      //     event.preventDefault()
-      //     console.log(`${productName} like button clicked!`)
-      //     let currentUserId = firebase.auth().currentUser.uid
+      document.querySelector(`.add-to-cartlist-button-${productId}`).addEventListener('click', async function (event) {
+        event.preventDefault()
+        let cartlistElement = document.querySelector(`.add-to-cartlist-button-${productId}`)
+        cartlistElement.innerHTML = `Added to Cart`
+        await db.collection('Carted').doc(`${productId}-${user.uid}`).set({})
+        cartlistElement.classList.add('opacity-30')
+      })
 
-      //     let querySnapshot = await db.collection('likes')
-      //       .where('productName', '==', productName)
-      //       .where('userId', '==', currentUserId)
-      //       .get()
-
-      //     if (querySnapshot.size == 0) {
-      //       await db.collection('likes').add({
-      //         productName: productName,
-      //         userId: currentUserId
-      //       })
-      //       let existingNumberOfLikes = document.querySelector(`.post-${productName} .likes`).innerHTML
-      //       let newNumberOfLikes = parseInt(existingNumberOfLikes) + 1
-      //       document.querySelector(`.like-button-${productName}`).innerHTML = newNumberOfLikes
-      //     }
-      // })
     }
 
 
