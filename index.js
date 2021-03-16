@@ -44,7 +44,7 @@ let products = await productResponse.json()
         <div class="md:w-1/3>
           <div class="space-y-2 md:mt-0 mt-2">    
             <h2 class="font-bold text-xl">${productName}</h2>
-            <img class="rounded-2xl w-25 h-1/3" src="${productImage}">
+            <img class="rounded-2xl w-3/5 h-3/5" src="${productImage}">
             <div class= text-m> ${productDescription} </div>
             <div class="font-bold text-m"><em>$${productPrice}</em> </div>
             <div> <button class="add-to-wishlist-button-${productId} block mt-4 text-white bg-green-500 rounded px-4 py-2">Add to Wish List</button> </div>
