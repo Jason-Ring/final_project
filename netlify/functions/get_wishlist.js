@@ -5,21 +5,22 @@ exports.handler = async function (event) {
 
   let wishListData = []
   let db = firebase.firestore()
-  let wishquerySnapshot = await db.collection('products').get()
-  console.log(`Number to products in collection: ${wishquerySnapshot.size}`)
+  let wishquerySnapshot = await db.collection('Wished').get()
+  console.log(`Number of wishes in collection: ${wishquerySnapshot.size}`)
 
-  let wishwishList = wishquerySnapshot.docs
-  for (let i = 0; i < wishwishList.length; i++) {
-    let wish = wishwishList[i].data()
-    let wishId = wish.id
-
+  let wishList = wishquerySnapshot.docs
+  for (let i = 0; i < wishList.length; i++) {
+    let wish = wishList[i].data()
+    let productId = wish.productId
+    let userId = wish.userId
     wishListData.push({
-      id: wishId,
+        productId: productId,
+        userId: userId
     })
   }
 
   return {
     statusCode: 200,
-    body: JSON.stringify(productListData)
+    body: JSON.stringify(wishListData)
   }
 }
