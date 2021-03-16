@@ -66,9 +66,14 @@ let products = await productResponse.json()
       document.querySelector(`.add-to-wishlist-button-${productId}`).addEventListener('click', async function (event) {
         event.preventDefault()
         let wishlistElement = document.querySelector(`.add-to-wishlist-button-${productId}`)
-        wishlistElement.innerHTML = `Added to Wishlist`
-        await db.collection('Wished').doc(`${productId}-${user.uid}`).set({userId: user.uid, productId: productId})
-        wishlistElement.classList.add('opacity-30')
+        let wishResponse = await fetch(`/.netlify/functions/post_wishlist`, {
+          method: `POST`,
+          body: JSON.stringify({userId: user.uid, productId: productId})
+        })
+        if (wishResponse.ok) {
+          wishlistElement.innerHTML = `Added to Wishlist`
+          wishlistElement.classList.add('opacity-30')
+        }
       })
 
       // let docRefCart = await db.collection('Carted').doc(`${productId}-${user.uid}`).get()
