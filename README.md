@@ -2,4 +2,6 @@ Topic ID #21 An app to rent fitness equipment from gyms. The gums are closed bec
 
 The website will allow people to rent equipment on the website. It will also allow the renters to have a "watch list/interested-in list".
 
+Netlify live site : https://distracted-bell-2398cb.netlify.app/index.html
+
 Team Members: Jun Bok Choi, Jason Ring, Mohammed Alsamarai.
