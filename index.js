@@ -40,14 +40,14 @@ let products = await productResponse.json()
       let productDescription = products[i].description
 
       outputElement.insertAdjacentHTML(`beforeend`, `
-    <div class="mt-6 md:flex md:space-x-2 p-2">
+    <div class="mt-3 md:flex md:space-x-2 p-4">
         <div class="md:w-1/3>
           <div class="space-y-2 md:mt-0 mt-2">    
-            <h2 class="font-bold text-xl">${productName}</h2>
-            <img class="rounded-2xl w-3/5 h-3/5" src="${productImage}">
-            <div class= text-m> ${productDescription} </div>
-            <div class="font-bold text-m"><em>$${productPrice}</em> </div>
-            <div> <button class="add-to-wishlist-button-${productId} block mt-4 text-white bg-green-500 rounded px-4 py-2">Add to Wish List</button> </div>
+            <h2 class="font-bold text-xl mt-2">${productName}</h2>
+            <img class="rounded-2xl w-3/5 h-3/5 mt-2" src="${productImage}">
+            <div class= "text-m mt-2">${productDescription} </div>
+            <div class="font-bold text-m mt-2"><em>$${productPrice}</em> </div>
+            <div> <button class="add-to-wishlist-button-${productId} block mt-4 text-white bg-blue-500 rounded px-4 py-2">Add to Wish List</button> </div>
           </div>
         </div>
       </div>`
