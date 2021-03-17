@@ -4,6 +4,6 @@ The MVP of the website being submitted will allow people to view available produ
 
 Netlify live site : https://distracted-bell-2398cb.netlify.app/index.html
 
-Nativescript of product list: https://play.nativescript.org/?template=play-js&id=tF6VNb&v=2
+Nativescript of product list: https://play.nativescript.org/?template=play-js&id=tF6VNb&v=5
 
 Team Members: Jun Bok Choi, Jason Ring, Mohammed Alsamarai.
