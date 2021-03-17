@@ -12,7 +12,7 @@ firebase.auth().onAuthStateChanged(async function (user) {
 
     // Sign-out button
     document.querySelector('.sign-in-or-sign-out').innerHTML = `
-  <button class="text-pink-500 underline sign-out">Sign Out</button>
+  <button class="mx-auto lg:mx-0 hover:underline bg-white text-gray-800 font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">Sign Out</button>
 `
     document.querySelector('.sign-out').addEventListener('click', function (event) {
       console.log('sign out clicked')
@@ -34,7 +34,7 @@ let products = await productResponse.json()
     for (let i = 0; i < products.length; i++) {
       let productName = products[i].name
       let productId = products[i].id
-      // let proudctCategory = products[i].category
+      let proudctCategory = products[i].category
       let productImage = products[i].image
       let productPrice = products[i].price
       let productDescription = products[i].description
