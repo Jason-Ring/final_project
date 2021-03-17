@@ -22,7 +22,7 @@ firebase.auth().onAuthStateChanged(async function (user) {
     })
 
     document.querySelector(`.homepage`).innerHTML = `
-    <div class="flex center text-xl p-2 m-2 bold">Almost Sold Out! Only Products Below Remain!</div>`
+    <div class="text-center text-4xl flex center p-2 m-2 bold">Almost Sold Out! Only Products Below Remain!</div>`
 
 let productResponse = await fetch(`/.netlify/functions/get_products`)
 let products = await productResponse.json()
